@@ -1,50 +1,88 @@
-body {
-  background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: Arial, sans-serif;
+/* --- Base --- */
+* { box-sizing: border-box; }
+:root{
+  --bg: #0b1220;
+  --panel: #121826;
+  --btn: #1c2433;
+  --btn-hover:#253044;
+  --text:#e6eaf2;
+  --muted:#94a3b8;
+  --op:#273246;
+  --blue:#3b82f6;
 }
 
-.calculator {
-  background: #111;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+html,body{
+  height:100%;
+  margin:0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 10% -10%, #152238 0%, transparent 60%),
+              radial-gradient(800px 800px at 110% 20%, #101b2d 0%, transparent 55%),
+              var(--bg);
+  display:grid; place-items:center;
 }
 
-#display {
-  width: 100%;
-  height: 50px;
-  font-size: 24px;
-  text-align: right;
-  margin-bottom: 20px;
-  border: none;
-  border-radius: 10px;
-  background: #222;
-  color: #fff;
-  padding: 10px;
+/* --- Calculator --- */
+.calc{
+  width: 380px;              /* regular size */
+  background: linear-gradient(180deg, #121826, #0f1724);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  overflow:hidden;
 }
 
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 70px);
+/* --- Screen --- */
+.screen{
+  padding: 18px 18px 6px 18px;
+  min-height: 110px;
+  display:flex; flex-direction:column; align-items:flex-end; justify-content:flex-end;
+}
+.history{
+  min-height: 22px;
+  font-size: 0.95rem;
+  color: var(--muted);
+  opacity: .85;
+}
+.display{
+  font-size: 2.75rem;
+  line-height: 1.15;
+  word-break: break-all;
+}
+
+/* --- Keys --- */
+.keys{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  padding: 16px;
+  background: #0d1422;
 }
 
-button {
-  height: 60px;
-  font-size: 20px;
-  border: none;
-  border-radius: 10px;
-  background: #333;
-  color: #fff;
+.btn{
+  height: 58px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  background: var(--btn);
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.2s;
+  transition: transform .06s ease, background .18s ease, filter .18s ease;
 }
+.btn:hover{ background: var(--btn-hover); }
+.btn:active{ transform: scale(0.98); }
 
-button:hover {
-  background: #555;
+.ghost{ color: var(--muted); background:#162030; }
+.op{ background: var(--op); }
+
+.equal{
+  background: var(--blue);
+  color: #fff;
+  border-color: transparent;
+  grid-row: span 2;          /* tall blue = button */
+  font-size: 1.25rem;
 }
+.equal:hover{ filter: brightness(1.07); }
+
+.wide{ grid-column: span 2; } /* wide zero */
