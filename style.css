@@ -9,54 +9,53 @@ body {
 }
 
 .calculator {
-  width: 350px; /* thoda wide */
+  width: 350px;
   background: #1e1e2f;
-  border-radius: 20px;
-  box-shadow: 0px 10px 30px rgba(0,0,0,0.6);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
   overflow: hidden;
 }
 
 #display {
   width: 100%;
-  height: 100px; /* bada kiya */
+  height: 90px;
   background: #0d1117;
   color: #00ffcc;
-  font-size: 2.2em; /* thoda bada */
+  font-size: 2.2em;
   text-align: right;
   padding: 20px;
   border: none;
   outline: none;
   box-sizing: border-box;
-  overflow-x: auto; /* scroll ho sakta agar bohot lamba input ho */
+  overflow-x: auto;
 }
 
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px; /* spacing thoda zyada */
+  gap: 10px;
   padding: 20px;
 }
 
 button {
-  height: 70px; /* bada button */
-  font-size: 1.5em;
-  font-weight: bold;
+  height: 65px;
+  font-size: 1.3em;
+  font-weight: 600;
   border: none;
-  border-radius: 15px;
-  background: linear-gradient(145deg, #2e2e3e, #1c1c28);
+  border-radius: 10px;
+  background: #2c2c3c;
   color: white;
-  box-shadow: 4px 4px 10px #0a0a14, -4px -4px 10px #2a2a3a;
   cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 
 button:hover {
-  background: linear-gradient(145deg, #3a3a4e, #252535);
-  transform: scale(1.05);
+  background: #3d3d52;
 }
 
 button:active {
-  transform: scale(0.95);
+  background: #22222f;
+  transform: scale(0.97);
 }
 
 .zero {
