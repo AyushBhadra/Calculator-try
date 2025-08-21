@@ -1,22 +1,20 @@
-let display = document.getElementById('display');
+let display = document.getElementById("display");
 
-function append(value) {
+function appendValue(value) {
   display.value += value;
 }
 
 function clearDisplay() {
-  display.value = '';
+  display.value = "";
 }
 
 function backspace() {
   display.value = display.value.slice(0, -1);
 }
 
-function calculate() {
+function calculateResult() {
   try {
-    display.value = eval(display.value
-      .replace(/÷/g, '/')
-      .replace(/×/g, '*'));
+    display.value = eval(display.value);
   } catch {
     display.value = "Error";
   }
