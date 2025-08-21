@@ -1,4 +1,4 @@
-let display = document.getElementById("display");
+const display = document.getElementById("display");
 
 function append(value) {
   display.value += value;
@@ -6,10 +6,6 @@ function append(value) {
 
 function clearDisplay() {
   display.value = "";
-}
-
-function del() {
-  display.value = display.value.slice(0, -1);
 }
 
 function calculate() {

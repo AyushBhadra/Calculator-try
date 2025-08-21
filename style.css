@@ -1,69 +1,62 @@
-/* page background + centering */
-* { box-sizing: border-box; }
 body {
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
-  font-family: 'Poppins', Arial, sans-serif;
-  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  display: grid;
-  place-items: center;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* calculator card */
 .calculator {
-  width: 350px;
-  background: rgba(255,255,255,0.12);
-  border-radius: 22px;
-  padding: 20px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+  width: 320px;
+  background: #1e1e2f;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0,0,0,0.6);
+  overflow: hidden;
 }
 
-/* display */
-.display {
+#display {
   width: 100%;
-  height: 64px;
-  border: none;
-  border-radius: 14px;
-  padding: 12px 16px;
-  font-size: 2rem;
+  height: 80px;
+  background: #0d1117;
+  color: #00ffcc;
+  font-size: 2em;
   text-align: right;
-  background: #ffffff;
-  box-shadow: inset 0 4px 10px rgba(0,0,0,0.12);
-  margin-bottom: 18px;
+  padding: 20px;
+  border: none;
+  outline: none;
 }
 
-/* buttons grid */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
+  gap: 10px;
+  padding: 20px;
 }
 
-/* button base */
 button {
+  height: 60px;
+  font-size: 1.3em;
+  font-weight: bold;
   border: none;
-  border-radius: 14px;
-  font-size: 1.2rem;
-  padding: 16px 0;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #2e2e3e, #1c1c28);
+  color: white;
+  box-shadow: 4px 4px 10px #0a0a14, -4px -4px 10px #2a2a3a;
   cursor: pointer;
-  background: #f2f2f2;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
-  transition: transform .08s ease, filter .15s ease, background .2s ease;
+  transition: transform 0.2s, background 0.3s;
 }
-button:hover { filter: brightness(0.95); transform: translateY(-2px); }
-button:active { transform: scale(0.97); }
 
-/* operator + = styles */
-button.operator {
-  color: #fff;
-  background: linear-gradient(135deg, #ff9966, #ff5e62);
+button:hover {
+  background: linear-gradient(145deg, #3a3a4e, #252535);
+  transform: scale(1.05);
 }
-button.equal {
-  grid-column: span 1; /* change to 2 if you want a wider = */
-  color: #fff;
-  background: linear-gradient(135deg, #36d1dc, #5b86e5);
-  font-weight: 600;
+
+button:active {
+  transform: scale(0.95);
 }
-button.zero { grid-column: span 2; } /* 0 button wide */
+
+.zero {
+  grid-column: span 2;
+}
